@@ -1,0 +1,16 @@
+<body *ngIf="poke">
+  <div class="flip" id="card">
+    <div [ngClass]="poke.types[0].type.name" class="face" id="front">
+      <mat-card-header>
+        <h1>{{ poke.name | titlecase }}</h1>
+      </mat-card-header>
+      <img src="{{ poke.sprites.other.dream_world.front_default }}" [alt]="poke.name"/>
+      <mat-card-content>
+       <p>Peso: {{poke.weight}}</p>
+       <p>Altura: {{poke.height}} </p>
+       <p>Tipo: {{poke.types[0].type.name}}</p>
+      </mat-card-content>
+      <button class="back" mat-flat-button (click)="backToPokemonList()">Voltar</button>
+    </div>
+  </div>
+</body>

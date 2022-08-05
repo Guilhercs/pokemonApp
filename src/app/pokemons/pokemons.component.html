@@ -1,0 +1,25 @@
+<div class="list-page">
+  <div>
+    <div class="search">
+      <input type="text" id="findPokemon" placeholder="Ex: Pikachu" name="pokemon" (keyup)="inputFilter()"/>
+    </div>
+  </div>
+  <div id="container">
+    <div class="list-cards" *ngFor="let poke of getAllPokemons ; let i = index">
+      <div [id]="'pokemon' + i" *ngIf="poke.status">
+        <section>
+          <mat-card class="cards" [ngClass]="poke.status.types[0].type.name">
+            <h2>{{ poke.name | titlecase }}</h2>
+            <img
+              matCardImage
+              src="{{ poke.status.sprites.other.dream_world.front_default }}" [alt]="poke.name"
+            />
+            <mat-card-actions class="actions">
+            <button aria-label="Detalhes do pokemon" mat-button class="details" (click)="detailsPokemon(poke.name)">Detalhes</button>
+            </mat-card-actions>
+         </mat-card>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+  <a [class.active]="level == 'Fácil'" (click)="level = 'facil'"> Fácil </a>
+  <a [class.active]="level == 'Médio'" (click)="level = 'medio'"> Médio </a>
+  <a [class.active]="level == 'Difícil'" (click)="level = 'dificil'">
+    Difícil
+  </a>
+</div>
+<div [ngSwitch]="level">
+  <div *ngSwitchCase="'facil'">Modo fácil</div>
+  <div *ngSwitchCase="'medio'">Modo médio</div>
+  <div *ngSwitchCase="'dificil'">Modo difícil</div>
+  <h1>Poke Memória</h1>
+  <p>
+    Pontos: <span id="pontos">{{ ponto }}</span>
+  </p>
+  <div class="container-game">
+    <div class="pokebola" *ngFor="let carta of baralho">
+      <img class="back" [src]="backImage" *ngIf="carta.hiddenCard" (click)="escolherCarta(carta.id)"/>
+      <div class="pokemon" *ngIf="!carta.hiddenCard">
+        <img id="pokemonImg" [src]="carta.img" />
+        <p>{{ carta.nome | titlecase }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <button mat-button class="random" (click)="embaralhar()">Embaralhar</button>
+  </div>
+</div>

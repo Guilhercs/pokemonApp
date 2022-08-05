@@ -1,1 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* Cores dos cards */
+.steel {
+	background-color: #bbb7b7;
+}
+
+.fire {
+	background-color: #781b1b;
+}
+
+.grass {
+	background-color: #57c05e;
+}
+
+.electric {
+	background-color: #a79953;
+}
+
+.water, .ice {
+	background-color: #5a94ae;
+}
+
+.ground {
+	background-color: #9c6857;
+}
+
+.rock {
+	background-color: #7f584a;
+}
+
+.fairy {
+	background-color: #9d7ba3;
+}
+
+.poison {
+	background-color: #7ca653;
+}
+
+.bug {
+	background-color: #645732;
+}
+
+.dragon {
+	background-color: #395e7d;
+}
+
+.psychic {
+	background-color: #4f384e;
+}
+
+.flying {
+	background-color: #6e88b5;
+}
+
+.fighting {
+	background-color: #625948;
+}
+
+.normal {
+	background-color: #cbc0a7;
+}
+.ghost {
+  background-color: #694d78;
+}
